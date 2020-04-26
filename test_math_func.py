@@ -1,15 +1,22 @@
-import math_func
+from math_func import StudentDB
 import pytest
 
-@pytest.mark.parametrize('num1, num2, result',
-                         [
-                             (7, 3, 10),
-                                 ('Hello', ' World', 'Hello World'),
-                             (10.5, 25.5, 36)
-                         ]
-                         )
-def test_add(num1, num2, result):
-    assert math_func.add(num1, num2) == result
+def test_scott_data():
+    db = StudenDB()
+    db.connect('data.json')
+    scott_data = db.get_data('Scott')
+    assert scott_data['id'] == 1
+    assert scott_data['name'] == 'Scott'
+    assert scott_data['result'] == 'pass'
+
+def test_mark_data():
+    db = StudentDB()
+    db.connect('data.json')
+    mark_data = db.get_data('Mark')
+    assert  mark_data['id'] == 2
+    assert  mark_data['name'] =='Mark'
+    assert mark_data['result'] =='fail'
+
 
 
 
