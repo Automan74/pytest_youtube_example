@@ -1,8 +1,12 @@
 from math_func import StudentDB
 import pytest
+db=None
+def setup_module()
+
+
 
 def test_scott_data():
-    db = StudenDB()
+    db = StudentDB()
     db.connect('data.json')
     scott_data = db.get_data('Scott')
     assert scott_data['id'] == 1
