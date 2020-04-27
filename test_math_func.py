@@ -1,8 +1,9 @@
 from math_func import StudentDB
 import pytest
-db=None
-def setup_module()
 
+
+# db=None
+# def setup_module()
 
 
 def test_scott_data():
@@ -13,16 +14,11 @@ def test_scott_data():
     assert scott_data['name'] == 'Scott'
     assert scott_data['result'] == 'pass'
 
+
 def test_mark_data():
     db = StudentDB()
     db.connect('data.json')
     mark_data = db.get_data('Mark')
-    assert  mark_data['id'] == 2
-    assert  mark_data['name'] =='Mark'
-    assert mark_data['result'] =='fail'
-
-
-
-
-
-
+    assert mark_data['id'] == 2
+    assert mark_data['name'] == 'Mark'
+    assert mark_data['result'] == 'fail'
