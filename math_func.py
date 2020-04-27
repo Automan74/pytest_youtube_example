@@ -14,5 +14,6 @@ class StudentDB:
                 return student
 
 
-
+    def close(self):
+        pass
 

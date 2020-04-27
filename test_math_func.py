@@ -1,14 +1,17 @@
 from math_func import StudentDB
 import pytest
+db=None
+def setup_module(module):
+     print('--------------setup----------------------')
+     global db
+     db = StudentDB()
+     db.connect('data.json')
 
-
-# db=None
-# def setup_module()
-
+def teardown_module(module):
+    print('--------------teardown--------------------')
+    db.close()
 
 def test_scott_data():
-    db = StudentDB()
-    db.connect('data.json')
     scott_data = db.get_data('Scott')
     assert scott_data['id'] == 1
     assert scott_data['name'] == 'Scott'
